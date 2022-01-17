@@ -1,0 +1,109 @@
+.canvas{
+    width: 960px;
+   height: 525px;
+    background-color: brown;
+    margin:16px auto;
+    position:relative;
+    animation-name:cambioFondo;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    overflow: hidden;
+    box-shadow: 25px 25px 25px;
+    border-radius: 80px;
+}
+.canvas img{
+    width: 1000px;
+    height:290px;
+
+}
+.cuadrado img{
+    width: 150px;
+    height: 150px;
+    background-color:greenyellow ;
+    position: absolute;
+    top:0;
+    left:0 ;
+    animation-name:periferia;
+    animation-duration: 10s;
+/*para que no se pare el redondo(cuadrado)*/
+    animation-iteration-count: infinite;
+   /*que no se pare en las esquinas*/ 
+animation-timing-function: linear;
+/*para que se transfore el cuadrado en redondo*/
+    box-shadow: 15px 15px 15px;
+    border-radius:80px ;
+
+}
+.cuadrado:hover{
+    animation-play-state: paused;
+}
+.texto{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:20vh; 
+    font-weight:bold ;
+    position: absolute;
+    left: 100%;
+    animation-name:aladerecha;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+    
+
+
+   @keyframes periferia{
+       0%{
+           top:0;
+           left:0;
+       }
+       25%{
+          top:calc(100% - 150px); 
+          left:0;
+       }
+       50%{
+           top:calc(100% - 150px);
+           left:calc(100% - 150px);
+       }
+       75%{
+        top:0;
+        left:calc(100% - 150px);
+       }
+       100%{
+           top: 0;
+           left:0 ;
+       }
+      
+       
+   }
+ @keyframes cambioFondo{
+    
+        0%{ background-color : rgb(229, 255, 0) ;
+           
+        box-shadow:25px 25px 25px rgb(43, 80, 57);
+
+        }
+        25%{ background-color : rgb(0, 68, 255) ;
+            box-shadow:25px 25px 25px ;
+        }
+        50%{ background-color : rgb(255, 0, 64) ;
+            box-shadow:25px 25px 25px ;
+        }
+        75%{ background-color : rgb(0, 255, 98) ;
+            box-shadow:25px 25px 25px ;
+        }
+        100%{ background-color : rgb(255, 81, 0) ;
+            box-shadow:25px 25px 25px ;
+        }
+    
+        
+     } @keyframes aladerecha{
+        from{
+            left:100%;
+        }
+        to{
+            left: -100%;
+        }
+       
+     }
